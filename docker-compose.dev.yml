@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  postgres:
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    image: 'postgres:11-alpine'
+    restart: always
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+  web:
+    build:
+      context: .
+      dockerfile: "Dockerfile.dev"
+    depends_on:
+      - postgres
+    environment:
+      MIX_ENV: dev
+      POSTGRES_HOST: postgres
+      POSTGRES_SSL: 'true'
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/app
+      - "build:/app/_build"
+volumes:
+  pgdata:
+  build:

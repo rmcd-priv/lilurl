@@ -1,0 +1,1 @@
+call "%~dp0\lilurl" eval Lilurl.Release.migrate
