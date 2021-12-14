@@ -4,7 +4,7 @@
 ## Docker Development w/ Local Elixir available (preferred)  
 
 ### Setup
-These instructions assume that you have docker and docker-compose installed locally, as well as elixir 1.12.3-otp-24, and erlang 24.1.7. If you do not have elixir/erlang installed locally, and would prefer to use docker commands directly, you can find an equivalent of each mix command at the bottom of this document.  
+These instructions assume that you have docker and docker-compose installed locally, as well as elixir 1.12.3-otp-24, and erlang 24.1.7. If you do not have elixir/erlang installed locally, and would prefer to use docker commands directly, you can find an equivalent of each mix command at the bottom of this section.  
 
 To get started with a fresh repo, you should run `mix docker.setup`. This will start a temporary instance of the application & postgres containers, and install any missing deps, as well as create, migrate, and seed the database. The development docker container syncs your local repository with the docker container's /app directory.  
 
