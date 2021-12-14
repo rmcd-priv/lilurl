@@ -1,4 +1,5 @@
 # Lilurl
+![Tests](https://github.com/rmcd-priv/lilurl/actions/workflows/elixir.yml/badge.svg)
 
 ## Docker Development w/ Local Elixir available (preferred)  
 
