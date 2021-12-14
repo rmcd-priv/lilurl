@@ -29,13 +29,9 @@ RUN mkdir config
 COPY config/config.exs config/${MIX_ENV}.exs config/
 RUN mix deps.compile
 
-WORKDIR /app/assets
-COPY assets/package.json assets/package-lock.json assets/*.config.js .
-RUN npm install
-COPY assets/css/app.css ./css/app.css
-RUN npx tailwindcss --input=./css/app.css --output=../priv/static/assets/app.css --postcss
+COPY assets/package.json assets/package-lock.json /app/assets/
+RUN npm install --prefix ./assets
 
 WORKDIR /app
-USER nobody
 
 CMD ["mix", "phx.server"]

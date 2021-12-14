@@ -14,7 +14,7 @@ From here, you can run `mix docker.test` to run the full suite of application te
 ### Starting a Server  
 Running `mix docker.server` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `mix docker.logs`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`.  
 
-Visit `localhost:8080` on your machine to view the application.  
+Visit `localhost:8080` on your machine to view the application.  * Note: You may need to wait a moment for the css watcher to compile assets the first time that you load the application. Your page load may not contain any styles until it does.
 
 
 The following mix commands are available when developing this application with a local installation of Elixir available, and their corresponding shell equivalents.
@@ -51,4 +51,4 @@ From here, you can run `docker-compose -f docker-compose.dev.yml run -e MIX_ENV=
 ### Starting a Server  
 Running `docker-compose -f docker-compose.dev.yml up -d` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `docker logs lilurl_web_1 --follow`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`.  
 
-Visit `localhost:8080` on your machine to view the application.  
+Visit `localhost:8080` on your machine to view the application. * Note: You may need to wait a moment for the css watcher to compile assets the first time that you load the application. Your page load may not contain any styles until it does.
