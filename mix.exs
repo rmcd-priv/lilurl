@@ -48,7 +48,8 @@ defmodule Lilurl.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:hashids, "~> 2.0"}
     ]
   end
 
@@ -64,7 +65,11 @@ defmodule Lilurl.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"],
+      "assets.deploy": [
+        "cmd --cd assets npm run deploy",
+        "esbuild default --minify",
+        "phx.digest"
+      ],
       # Docker custom aliases
       "docker.build": "cmd docker-compose -f docker-compose.dev.yml build",
       "docker.postgres.detached": "cmd docker-compose -f docker-compose.dev.yml up -d postgres",

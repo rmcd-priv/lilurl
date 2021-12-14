@@ -1,0 +1,31 @@
+<div class="bg-white sm:rounded-lg shadow sm:max-w-md sm:w-full sm:mx-auto sm:overflow-hidden sm:mt-4">
+    <div class="px-4 py-8 sm:px-10">
+        <div class="relative mt-6">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-300">
+                </div>
+            </div>
+            <div class="relative flex justify-center text-sm leading-5">
+                <span class="px-2 text-gray-500 bg-white">
+                    Get your lilurl on!
+                </span>
+            </div>
+        </div>
+  <%= form_for @changeset, Routes.url_mapping_path(@conn, :create), [class: ""], fn f -> %>
+    <div class="mt-6">
+      <div class="w-full space-y-6">
+        <div class="w-full">
+          <div class=" relative">
+          <%= text_input f, :url, class: "rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 mb-3 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent", placeholder: "https://example.com" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="block w-full rounded-md shadow-sm">
+        <%= submit "Submit", class: "py-2 px-4 bg-pink-600 hover:bg-pink-700 focus:ring-pink-500 focus:ring-offset--200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg" %>
+      </span>
+    </div>
+  <% end %>
+  </div>
+</div>

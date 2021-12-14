@@ -17,8 +17,12 @@ defmodule LilurlWeb.Router do
   scope "/", LilurlWeb do
     pipe_through :browser
 
+    get "/:slug", UrlMappingController, :show
+
     get "/", PageController, :index
+    post "/", UrlMappingController, :create
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", LilurlWeb do

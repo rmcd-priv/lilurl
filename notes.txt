@@ -1,0 +1,1 @@
+Instructions for running and setting up this project can be found in the README.md

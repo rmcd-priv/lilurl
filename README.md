@@ -11,7 +11,9 @@ To get started with a fresh repo, you should run `mix docker.setup`. This will s
 From here, you can run `mix docker.test` to run the full suite of application tests. If you would like to run a single test, you may pass a relative file path to `mix docker.test` as well. 
 
 ### Starting a Server  
-Running `mix docker.server` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `mix docker.logs`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`. Visit `localhost:8080` on your machine to view the application.  
+Running `mix docker.server` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `mix docker.logs`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`.  
+
+Visit `localhost:8080` on your machine to view the application.  
 
 
 The following mix commands are available when developing this application with a local installation of Elixir available, and their corresponding shell equivalents.
@@ -46,4 +48,6 @@ To get started with a fresh repo, you should run `docker-compose -f docker-compo
 From here, you can run `docker-compose -f docker-compose.dev.yml run -e MIX_ENV=test web mix test` to run the full suite of application tests. If you would like to run a single test, you may pass a relative file path to `docker-compose -f docker-compose.dev.yml run -e MIX_ENV=test web mix test` as well. 
 
 ### Starting a Server  
-Running `docker-compose -f docker-compose.dev.yml up -d` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `docker logs lilurl_web_1 --follow`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`. Visit `localhost:8080` on your machine to view the application.  
+Running `docker-compose -f docker-compose.dev.yml up -d` will start both the application server, as well as the postgres container in detached mode. After the app server has started, you may watch the logs by running `docker logs lilurl_web_1 --follow`. If you would like to run shell commands from within the container, run `docker exec -it lilurl_web_1 bash`.  
+
+Visit `localhost:8080` on your machine to view the application.  
