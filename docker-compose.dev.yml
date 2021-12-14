@@ -27,6 +27,8 @@ services:
     volumes:
       - .:/app
       - "build:/app/_build"
+      - "node_modules:/app/assets/node_modules"
 volumes:
   pgdata:
   build:
+  node_modules:
